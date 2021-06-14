@@ -9,6 +9,7 @@ const fileSystemPropertyName: string = "MANDARINE_FILE_SYSTEM";
 const encoder = new TextEncoder();
 const decoderUtf8 = new TextDecoder('utf-8');
 const isExecutable: boolean = (Deno.mainModule == "file://$deno$/bundle.js");
+console.log(isExecutable)
 
 const fileExists = (path: string | URL): boolean => {
     try {
