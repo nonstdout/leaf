@@ -67,8 +67,8 @@ export class Leaf {
 
         const fileInMemory = this.files[filePath] || (this.files[`./${filePath}`] || this.files[filePath.replace("./", "")]);
         
-        console.log(this.files)
-        console.log(fileInMemory)
+        console.log("this.files:", this.files)
+        console.log("inmemory1", fileInMemory)
         if(!fileInMemory) {
             // Logic for the compiler
             if(fileExists(filePath)) {
@@ -79,6 +79,7 @@ export class Leaf {
                 throw new Error(`File not found (${filePath}).`);
             }
         } else {
+            console.log("inmemory2",fileInMemory)
             return fileInMemory;
         }
     }
