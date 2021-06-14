@@ -66,7 +66,9 @@ export class Leaf {
         if(!filePath) throw new Error("Invalid Path");
 
         const fileInMemory = this.files[filePath] || (this.files[`./${filePath}`] || this.files[filePath.replace("./", "")]);
-
+        
+        console.log(this.files)
+        console.log(fileInMemory)
         if(!fileInMemory) {
             // Logic for the compiler
             if(fileExists(filePath)) {
